@@ -1,0 +1,54 @@
+/* worlds best css */
+* { box-sizing: border-box; }
+html { background-color: #fff; margin: 0; padding: 0; border: 10px solid cyan; font-size: 1.5em; }
+body { margin: 0 auto; padding: 4em 2em; width: 100%; max-width: 1000px; font-family: monospace; font-size: 1em; }
+a { color: blue; text-decoration: underline; }
+section { margin: 4em 0; }
+footer { font-size: .8em; margin: 4em 0 0; text-align: right; }
+p { line-height: 1.5em; }
+
+.float-left { float: left; margin: auto 1em 1em auto; }
+.full-width { width: 100%; }
+
+#art section { margin: 2em 0 4em; }
+#art h2 { font-size: 2em; font-weight: normal; }
+
+h1 em { color: magenta; }
+#links ul { padding: 0; }
+#links li { margin: 1em 0; }
+#links a { padding: .3em .5em; display: inline-block; }
+#links h3 { text-align: center; }
+
+#links section { margin: 4em 0; }
+#links .webring li { display: inline-block; margin: .4em 0; }
+
+#breadcrumbs {
+  margin: 0;
+}
+
+#vitae ul li {
+  margin: 1em 0;
+}
+
+#vitae em {
+  display: block;
+}
+
+#selected-art ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#selected-art ul li {
+  display: inline-block;
+  list-style: none;
+  margin: .5em;
+}
+
+#selected-art ul li img {
+  height: 250px;
+}
+
+.fire,
+.hammertime { height: 50px; vertical-align: middle; }

@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jennmoneydollars &bull; pxon</title>
+  <style>
+    html { margin: 0; padding: 0; border-top: 10px solid cyan; }
+    body { max-width: 1200px; margin: 20px auto; padding: 1em; font-family: monospace; font-size: 16px; line-height: 1.5em; }
+    a { color: blue; text-decoration: none; }
+    h1 { font-size: 4em; }
+    h1 em { color: magenta; font-size: .3em; }
+    h2 { font-size: 3em;}
+    h3 { font-size: 2em; padding: 10px; line-height: .7em; margin-bottom: 0;}
+    img.right { float: right; margin: 0 0 10px 10px; border: 10px solid lime;  }
+    #credits ol { list-style: none; padding: 0; }
+    footer { clear: both; }
+    code { background: #ccc; color: #666; padding: 2px; }
+    code.language-javascript { background: none; }
+  </style>
+  <link rel="stylesheet" href="../assets/lib/prism.css" />
+</head>
+<body>
+
+  <section id="breadcrumbs">
+    &lt;--- <a href="/">go to jennmoney.biz</a>
+  </section>
+
+  <div id="main">
+    <h2>pxon <small>ie. "pixel art object notation"</small></h2>
+
+    <h3>abstract</h3>
+
+    <p>PXON <em>(pronounced like "picks on" as in "I hate it that Jenn always 'picks on' me."<sup id="ref-1"><a href="#cite-1">1</a></sup>)</em> is a proposed standard, which no one needs or even asked for, of the representation of pixel art using <abbr title="JavaScript Object Notation"><a href="http://json.org/">JSON</a></abbr> and properties of the <a href="http://www.w3.org/2003/12/exif/"><abbr title="Exchangeable image file format">Exif</abbr> <abbr title="Resource Description Framework">RDF</abbr> schema</a>. It provides the means for both lightweight data-interchange and the object-oriented creation of pixel art. </p>
+
+    <h3>structure</h3>
+
+    <p>It's just JSON. But there are two objects, <abbr title="exchangeable image file format"><code>exif</code></abbr> and <abbr title="pixel image file format"><code>pxif</code></abbr>. <code>exif</code> has any properties defined by the Exif RDF schema (mention and link in the abstract). For the sake of creating pixel art, many of these properties are not necessary or even applicable. They have been narrowed down to:</p>
+
+    <ul>
+      <li><code>software</code>: (string) the software used to create/export the pxon</li>
+      <li><code>artist</code>: (string) the identity of the artist of the work the pxon represents</li>
+      <li><code>imageDescription</code>: (string) a description of the image</li>
+      <li><code>userComment</code>: (string) a comment from the user generating the pxon</li>
+      <li><code>copyright</code>: (string) the copyright of the image</li>
+      <li><code>dateTime</code>: (string) the date/Time the pxon was initially generated</li>
+    </ul>
+
+    <p><code>pxif</code> is the pixel art spin of <code>exif</code>, in essense it is unique to pixel art and breaks down the image beyond its typical metadata and focuses on the individual strokes and drawings of the pixels within the image. The first property, <code>pixels</code> is an array of "pixel" objects representing the pixels drawn in the image. Because it is a new idea in this format, the list of properties is fluid and ever changing at the moment. They are currently:</p>
+
+    <ul>
+      <li><code>x</code> - (integer) the x coordinate position of the pixel</li>
+      <li><code>y</code> - (integer) the y coordinate position of the pixel</li>
+      <li><code>color</code> - (string) the color of the pixel</li>
+    </ul>
+
+    <p>There used to be a <code>size</code> property which I have removed as canon to pxif objects. I typically manually add that and other properties, but it is no longer and should not be required to represent a pixel - which ultimately is the smallest unit of measurement after all!</p>
+
+    <pre><code class="language-javascript">{
+  "exif": {
+    "software"          : "",
+    "artist"            : "",
+    "imageDescription"  : "",
+    "userComment"       : "",
+    "copyright"         : "",
+    "dateTime"          : ""
+  },
+  "pxif": {
+    "pixels"  : [
+      {
+        "x"  : 0,
+        "y"  : 0,
+        "color" : "",
+      }
+    ]
+  }
+}</code></pre>
+
+    <h3>example</h3>
+
+    <pre><code class="language-javascript">{
+  "exif": {
+    "software": "http://pxonloop.glitch.me",
+    "artist": "jenn schiffer",
+    "imageDescription": "smile",
+    "userComment": "an example pixel drawing to show off pxon",
+    "copyright": "jenn schiffer 2018",
+    "dateTime": "2015-09-17T15:21:51.761Z"
+  },
+  "pxif": {
+    "pixels": [
+      {
+        "x": 75,
+        "y": 69,
+        "color": "rgba(0, 0, 0, 1)",
+        "size": 15
+      },
+      {
+        "x": 80,
+        "y": 84,
+        "color": "rgba(0, 0, 0, 1)",
+      },
+      {
+        "x": 96,
+        "y": 82,
+        "color": "rgba(0, 0, 0, 1)",
+      },
+      {
+        "x": 110,
+        "y": 83,
+        "color": "rgba(0, 0, 0, 1)",
+      },
+      {
+        "x": 129,
+        "y": 72,
+        "color": "rgba(0, 0, 0, 1)",
+      },
+      {
+        "x": 88,
+        "y": 40,
+        "color": "rgba(0, 0, 0, 1)",
+      },
+      {
+        "x": 112,
+        "y": 38,
+        "color": "rgba(0, 0, 0, 1)",
+      },
+      {
+        "x": 97,
+        "y": 57,
+        "color": "rgba(0, 0, 0, 1)",
+      }
+    ]
+  }
+}</code></pre>
+
+    <h3>apps using pxon</h3>
+
+    <ul>
+      <li><a href="http://pxonloop.glitch.me">pxonloop.glitch.me</a> - a pxon playground</li>
+      <li><a href="http://make8bitart.com">make8bitart.com</a> - pixel art painting app</li>
+      <li><a href="http://image-to-pxon.glitch.me">image-to-pxon.glitch.me</a> - app that converts image to pxon</li>
+    </ul>
+
+    <h3>changelog</h3>
+
+    <ul>
+      <li>v. 0.2.0 remove size and dataurl as canonical properties</li>
+      <li>v. 0.1.0 change pxif properties xPos and yPos to x and y</li>
+      <li>v. 0.0.1 initial draft</li>
+    </ul>
+
+    <section id="credits">
+      <h3>citation and credits</h3>
+
+      <ol>
+        <li><sup id="cite-1"><a href="#ref-1">[1]</a></sup> quote by <a href="http://twitter.com/ajpiano">Adam J. Sontag</a></li>
+      </ol>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2018 jenn schiffer</p>
+  </footer>
+
+  <script type="text/javascript">
+    (function(){
+      var neonColors = [
+        '#ff00ff',
+        '#00ffff',
+        '#00ff00',
+        '#ffff00',
+        '#ff0000',
+        '#0000ff',
+        '#7920FF',
+        '#FD0987',
+        '#FF3300',
+        '#FF6EC7',
+        '#00FF66',
+        '#4D4DFF',
+        '#67C8FF',
+        '#7BFB2D', // test double zomg neon green™
+        '#AAFF00',
+        '#FF00AA',
+        '#AA00FF',
+        '#FF7F00',
+        '#228DFF',
+        '#ff6d38',
+        '#f90000',
+        '#fd8b25',
+        '#25d7fb',
+        '#7920ff',
+        '#fe51c3',
+        '#ff9072',
+        '#ff63a2',
+        '#e3e641',
+      ];
+
+      var main = document.getElementById('main');
+      var h3Items = main.getElementsByTagName('h3');
+
+      for ( var i = 0; i < h3Items.length; i++ ) {
+        h3Items[i].style.backgroundColor = neonColors[ Math.floor(Math.random() * (neonColors.length + 1)) ];
+      }
+    })();
+  </script>
+
+  <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+  <script type="text/javascript">try{ clicky.init(23177); }catch(e){}</script>
+  <noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23177ns.gif" /></p></noscript>
+</body>
+</html>
