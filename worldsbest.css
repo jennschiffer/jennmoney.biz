@@ -1,26 +1,78 @@
 /* worlds best css */
-* { box-sizing: border-box; }
-html { background-color: #fff; margin: 0; padding: 0; border: 10px solid cyan; font-size: 1.5em; }
-body { margin: 0 auto; padding: 4em 2em; width: 100%; max-width: 1000px; font-family: monospace; font-size: 1em; }
-a { color: blue; text-decoration: underline; }
-section { margin: 4em 0; }
-footer { font-size: .8em; margin: 4em 0 0; text-align: right; }
-p { line-height: 1.5em; }
+* {
+  box-sizing: border-box;
+}
+html {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  border: 10px solid cyan;
+  font-size: 1.5em;
+}
+body {
+  margin: 0 auto;
+  padding: 4em 2em;
+  width: 100%;
+  max-width: 1000px;
+  font-family: monospace;
+  font-size: 1em;
+}
+a {
+  color: blue;
+  text-decoration: underline;
+}
+section {
+  margin: 4em 0;
+}
+footer {
+  font-size: 0.8em;
+  margin: 4em 0 0;
+  text-align: right;
+}
+p {
+  line-height: 1.5em;
+}
 
-.float-left { float: left; margin: auto 1em 1em auto; }
-.full-width { width: 100%; }
+.float-left {
+  float: left;
+  margin: auto 1em 1em auto;
+}
+.full-width {
+  width: 100%;
+}
 
-#art section { margin: 2em 0 4em; }
-#art h2 { font-size: 2em; font-weight: normal; }
+#art section {
+  margin: 2em 0 4em;
+}
+#art h2 {
+  font-size: 2em;
+  font-weight: normal;
+}
 
-h1 em { color: magenta; }
-#links ul { padding: 0; }
-#links li { margin: 1em 0; }
-#links a { padding: .3em .5em; display: inline-block; }
-#links h3 { text-align: center; }
+h1 em {
+  color: magenta;
+}
+#links ul {
+  padding: 0;
+}
+#links li {
+  margin: 1em 0;
+}
+#links a {
+  padding: 0.3em 0.5em;
+  display: inline-block;
+}
+#links h3 {
+  text-align: center;
+}
 
-#links section { margin: 4em 0; }
-#links .webring li { display: inline-block; margin: .4em 0; }
+#links section {
+  margin: 4em 0;
+}
+#links .webring li {
+  display: inline-block;
+  margin: 0.4em 0;
+}
 
 #breadcrumbs {
   margin: 0;
@@ -43,7 +95,7 @@ h1 em { color: magenta; }
 #selected-art ul li {
   display: inline-block;
   list-style: none;
-  margin: .5em;
+  margin: 0.5em;
 }
 
 #selected-art ul li img {
@@ -51,4 +103,29 @@ h1 em { color: magenta; }
 }
 
 .fire,
-.hammertime { height: 50px; vertical-align: middle; }
+.hammertime {
+  height: 50px;
+  vertical-align: middle;
+}
+
+/* dark mode */
+#mode {
+  display: block;
+  text-align: right;
+  font-size: smaller;
+  font-style: italic;
+}
+
+.darkmode {
+  background-color: #222;
+  color: #ccc;
+  border-color: dodgerblue;
+}
+
+.darkmode a {
+  color: dodgerblue;
+}
+
+.darkmode #links li a {
+  color: #222;
+}

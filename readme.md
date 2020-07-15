@@ -1,7 +1,7 @@
 jennmoney.biz
 =============
 
-on my way to steal your dad
+on my way to steal your snacks
 
                              i i'
                               \~;\
@@ -9,7 +9,7 @@ on my way to steal your dad
                                 \ ;\    ====
                                  \ ;\  ==== \
                             __,--';;;\-' (  0
-                      __,--';;; ;;; ;;\      >
+                      __,--';;; jenn ;\      >
                __,--'\\ ;;; ;;; ;;; ;;;\--__<
         _ _,--' __,--'\\  ;;; __,~~' \ ;\
        (_)|_,--' __,--'\\;,~~'        \ ;\
@@ -17,7 +17,7 @@ on my way to steal your dad
        || |                             \ ;\
         |_/                              !~!,
                                      .---'''---.
-                                     |         |
-                                     |         |
+                                     |    your |
+                                     |  snacks |
                                      |         |
                                      `---------'
